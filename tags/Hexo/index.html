@@ -175,6 +175,12 @@
 
 </head>
 
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/fireworks.js"></script>
+
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
@@ -241,23 +247,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-tags menu-item-active">
 
     
@@ -309,7 +298,7 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
+          <li class="menu-item menu-item-about">
 
     
     
@@ -319,7 +308,7 @@
 
     
 
-    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
 
@@ -387,9 +376,6 @@
             
 
     
-    
-      
-      
     
       
       
@@ -503,7 +489,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -515,12 +501,20 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/categories/">
+                    
+                  
+                    
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
-                  
+                  </a>
                 </div>
               
 
@@ -530,12 +524,20 @@
                 <div class="site-state-item site-state-tags">
                   
                     
+                      <a href="/tags/">
+                    
+                  
+                    
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -554,7 +556,7 @@
                   
                     
                   
-                  <a href="https://github.com/yourname" title="GitHub &rarr; https://github.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                  <a href="https://github.com/Janetyu" title="GitHub &rarr; https://github.com/Janetyu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -563,7 +565,7 @@
                   
                     
                   
-                  <a href="https://www.jianshu.com/u/447fdef5fb8f" title="简书 &rarr; https://www.jianshu.com/u/447fdef5fb8f" rel="noopener" target="_blank"><i class="fa fa-fw fa-heartbeat"></i></a>
+                  <a href="https://www.jianshu.com/u/1d603576fca3" title="简书 &rarr; https://www.jianshu.com/u/1d603576fca3" rel="noopener" target="_blank"><i class="fa fa-fw fa-heartbeat"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -572,7 +574,7 @@
                   
                     
                   
-                  <a href="https://segmentfault.com/blog/iconye_vue" title="Segmentfault &rarr; https://segmentfault.com/blog/iconye_vue" rel="noopener" target="_blank"><i class="fa fa-fw fa-link"></i></a>
+                  <a href="https://segmentfault.com/u/jianlinker" title="Segmentfault &rarr; https://segmentfault.com/u/jianlinker" rel="noopener" target="_blank"><i class="fa fa-fw fa-link"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -581,7 +583,7 @@
                   
                     
                   
-                  <a href="https://www.zhihu.com/people/yi-ke-id/activities" title="知乎 &rarr; https://www.zhihu.com/people/yi-ke-id/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-ioxhost"></i></a>
+                  <a href="https://www.zhihu.com/people/yu-juan-shao-nian/activities" title="知乎 &rarr; https://www.zhihu.com/people/yu-juan-shao-nian/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-ioxhost"></i></a>
                 </span>
               
             </div>
@@ -791,15 +793,15 @@
   });
   new Valine({
     el: '#comments',
-    verify: true,
+    verify: false,
     notify: true,
     appId: 'Lu3CzJl1gikasSeFkRXiKx9f-gzGzoHsz',
     appKey: 'C5aPPAjGvQUen2o3zk8ckj1F',
-    placeholder: 'Just go go',
+    placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！',
     avatar: 'wavatar',
     meta: guest,
     pageSize: '10' || 10,
-    visitor: true,
+    visitor: false,
     lang: 'zh-cn' || 'zh-cn'
   });
 </script>
@@ -1162,6 +1164,74 @@
 
 
   
+  
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $('.leancloud_visitors');
+
+      $visitors.each(function() {
+        entries.push( $(this).attr('id').trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+        .done(function({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'Lu3CzJl1gikasSeFkRXiKx9f-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'Lu3CzJl1gikasSeFkRXiKx9f-gzGzoHsz',
+                'X-LC-Key': 'C5aPPAjGvQUen2o3zk8ckj1F',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
+  </script>
+
+
 
   
 
