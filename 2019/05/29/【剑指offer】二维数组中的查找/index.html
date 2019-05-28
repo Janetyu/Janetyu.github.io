@@ -107,17 +107,18 @@
 
 
 
-  <meta name="description" content="Noted the code, noted the life.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about me">
-<meta property="og:url" content="https://janetyu.github.io/about/index.html">
+  <meta name="description" content="题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 输入描述 array： 待查找的二维数组 target：查找的数字  输出描述 查找到返回true，查找不到返回false  实现思路123456789101112131415161718192021222324252627">
+<meta name="keywords" content="算法,剑指offer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【剑指offer】二维数组中的查找">
+<meta property="og:url" content="https://janetyu.github.io/2019/05/29/【剑指offer】二维数组中的查找/index.html">
 <meta property="og:site_name" content="JianLinker Blog">
-<meta property="og:description" content="Noted the code, noted the life.">
+<meta property="og:description" content="题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 输入描述 array： 待查找的二维数组 target：查找的数字  输出描述 查找到返回true，查找不到返回false  实现思路123456789101112131415161718192021222324252627">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-21T03:32:02.762Z">
+<meta property="og:updated_time" content="2019-05-28T16:50:10.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about me">
-<meta name="twitter:description" content="Noted the code, noted the life.">
+<meta name="twitter:title" content="【剑指offer】二维数组中的查找">
+<meta name="twitter:description" content="题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 输入描述 array： 待查找的二维数组 target：查找的数字  输出描述 查找到返回true，查找不到返回false  实现思路123456789101112131415161718192021222324252627">
 
 
 
@@ -125,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://janetyu.github.io/about/">
+  <link rel="canonical" href="https://janetyu.github.io/2019/05/29/【剑指offer】二维数组中的查找/">
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>about me | JianLinker Blog</title>
+  <title>【剑指offer】二维数组中的查找 | JianLinker Blog</title>
   
 
 
@@ -299,7 +300,7 @@
         
         
           
-          <li class="menu-item menu-item-about menu-item-active">
+          <li class="menu-item menu-item-about">
 
     
     
@@ -376,78 +377,259 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://janetyu.github.io/2019/05/29/【剑指offer】二维数组中的查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JianLinker">
+      <meta itemprop="description" content="Noted the code, noted the life.">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JianLinker Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">about me
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
+          <h1 class="post-title" itemprop="name headline">【剑指offer】二维数组中的查找
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-29 00:15:32" itemprop="dateCreated datePublished" datetime="2019-05-29T00:15:32Z">2019-05-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-28 16:50:10" itemprop="dateModified" datetime="2019-05-28T16:50:10Z">2019-05-28</time>
+              
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/29/【剑指offer】二维数组中的查找/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/29/【剑指offer】二维数组中的查找/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2019/05/29/【剑指offer】二维数组中的查找/" class="leancloud_visitors" data-flag-title="【剑指offer】二维数组中的查找">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><blockquote>
+<p>array： 待查找的二维数组 target：查找的数字</p>
+</blockquote>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><blockquote>
+<p>查找到返回true，查找不到返回false</p>
+</blockquote>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> problem003</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用了分治的思想，根据题意可得</span></span><br><span class="line"><span class="comment">// 从数组中选取数字，和目标数字的关系有三种情况：=，&lt;或&gt;。</span></span><br><span class="line"><span class="comment">// 如果是等于则查找成功；</span></span><br><span class="line"><span class="comment">// 如果是数组中元素小于要查找的数字，说明要查找的数字应该在当前位置的右边或下边。</span></span><br><span class="line"><span class="comment">// 如果是数组中元素大于要查找的数字，说明要查找的数字应该在当前位置的左边或上边。</span></span><br><span class="line"><span class="comment">// 即 对于数组中的任何一个元素, 比它小的元素都在它的左方或者上方, 比它大的元素都在它的右边或者下方</span></span><br><span class="line"><span class="comment">// 但是这两个区域还有可能有重叠，比如右边或下边会在右下角有重叠。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 为了不重复的处理重叠的数据, 我们可以找几个特殊的起点, 比如</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 起点	 	性质							可否作为起点</span></span><br><span class="line"><span class="comment">// 左上角		没有上方元素(小)和左方元素(小)</span></span><br><span class="line"><span class="comment">// 			只有下方元素(大)和右方元素(大)		否</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 右上角		没有上方元素(小), 和右方元素(大)</span></span><br><span class="line"><span class="comment">// 			只有下方元素(大)和左方元素(小)		是</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 左下角		没有下方元素(大), 和左方元素(小)</span></span><br><span class="line"><span class="comment">// 			只有上方元素(小)和右方元素(大)		是</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 右下角		没有下方元素(大), 和右方元素(大)</span></span><br><span class="line"><span class="comment">// 			只有上方元素(小)和左方元素(小)		否</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 因此重叠问题的解决方法：</span></span><br><span class="line"><span class="comment">// 如果查找从右上角开始，如果要查找的数字不在右上角，则每次可以剔除一列或一行。</span></span><br><span class="line"><span class="comment">// 也可以从左下角开始</span></span><br><span class="line"><span class="comment">// 但是不能从左上角或者右下角开始。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Find</span><span class="params">(board [][]<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    rlen := <span class="built_in">len</span>(board) <span class="comment">// 行</span></span><br><span class="line">    clen := <span class="built_in">len</span>(board[<span class="number">0</span>]) <span class="comment">// 列</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从右上角开始查找</span></span><br><span class="line">    <span class="keyword">for</span> r,c := <span class="number">0</span>, clen<span class="number">-1</span>; r &lt; rlen<span class="number">-1</span> &amp;&amp; c &gt; <span class="number">0</span>; &#123;</span><br><span class="line">        <span class="keyword">if</span> board[r][c] == target &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> board[r][c] &gt; target &#123;</span><br><span class="line">            <span class="comment">// 往左边查找</span></span><br><span class="line">            c--</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 往下边查找</span></span><br><span class="line">            r++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 从左下角开始查找</span></span><br><span class="line">    <span class="comment">// for r,c := rlen-1, 0; r &gt; 0 &amp;&amp; c &lt; clen-1; &#123;</span></span><br><span class="line">    <span class="comment">//     if board[r][c] == target &#123;</span></span><br><span class="line">    <span class="comment">//         return true</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">//     if board[r][c] &gt; target &#123;</span></span><br><span class="line">    <span class="comment">//         // 往上边查找</span></span><br><span class="line">    <span class="comment">//         r--</span></span><br><span class="line">    <span class="comment">//     &#125; else &#123;</span></span><br><span class="line">    <span class="comment">//         // 往右边查找</span></span><br><span class="line">    <span class="comment">//         c++</span></span><br><span class="line">    <span class="comment">//         continue</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// return false</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> problem003</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">4<span class="string">"testing"</span></span><br><span class="line">4<span class="string">"github.com/stretchr/testify/assert"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> para <span class="keyword">struct</span> &#123;</span><br><span class="line">4board [][]<span class="keyword">int</span></span><br><span class="line">4target <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> ans <span class="keyword">struct</span> &#123;</span><br><span class="line">4find <span class="keyword">bool</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> question <span class="keyword">struct</span> &#123;</span><br><span class="line">4p para</span><br><span class="line">4a ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Test_OK</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">4ast := assert.New(t)</span><br><span class="line"></span><br><span class="line">4qs := []question&#123;</span><br><span class="line">44question&#123;</span><br><span class="line">444p: para&#123;</span><br><span class="line">4444board: [][]<span class="keyword">int</span>&#123;</span><br><span class="line">44444[]<span class="keyword">int</span>&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">9</span>, &#125;,</span><br><span class="line">    				[]<span class="keyword">int</span>&#123; <span class="number">2</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">12</span>, &#125;,</span><br><span class="line">    				[]<span class="keyword">int</span>&#123; <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">13</span>, &#125;,</span><br><span class="line">    				[]<span class="keyword">int</span>&#123; <span class="number">6</span>, <span class="number">8</span>, <span class="number">11</span>, <span class="number">15</span>, &#125;,	</span><br><span class="line">4444&#125;,</span><br><span class="line">4444target: <span class="number">7</span>,</span><br><span class="line">444&#125;,</span><br><span class="line">444a: ans&#123;</span><br><span class="line">4444find: <span class="literal">true</span>,</span><br><span class="line">444&#125;,</span><br><span class="line">44&#125;,</span><br><span class="line">44question&#123;</span><br><span class="line">444p: para&#123;</span><br><span class="line">4444board: [][]<span class="keyword">int</span>&#123;</span><br><span class="line">44444[]<span class="keyword">int</span>&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">9</span>, &#125;,</span><br><span class="line">    				[]<span class="keyword">int</span>&#123; <span class="number">2</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">12</span>, &#125;,</span><br><span class="line">    				[]<span class="keyword">int</span>&#123; <span class="number">4</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">13</span>, &#125;,</span><br><span class="line">    				[]<span class="keyword">int</span>&#123; <span class="number">6</span>, <span class="number">8</span>, <span class="number">11</span>, <span class="number">15</span>, &#125;,		</span><br><span class="line">4444&#125;,</span><br><span class="line">4444target: <span class="number">7</span>,</span><br><span class="line">444&#125;,</span><br><span class="line">444a: ans&#123;</span><br><span class="line">4444find: <span class="literal">false</span>,</span><br><span class="line">444&#125;,</span><br><span class="line">44&#125;,</span><br><span class="line">4&#125;</span><br><span class="line"></span><br><span class="line">4<span class="keyword">for</span> _, q := <span class="keyword">range</span> qs &#123;</span><br><span class="line">44a, p := q.a, q.p</span><br><span class="line">44ast.Equal(a.find, Find(p.board, p.target), <span class="string">"输入:%v"</span>, p)</span><br><span class="line">4&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+      <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="JianLinker wechat" style="width: 200px; max-width: 100%;">
+  <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/剑指offer/" rel="tag"><i class="fa fa-tag"></i> 剑指offer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/28/计算机网络-一/" rel="next" title="计算机网络(一)">
+                <i class="fa fa-chevron-left"></i> 计算机网络(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -467,8 +649,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -626,6 +817,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入描述"><span class="nav-number">2.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出描述"><span class="nav-number">3.</span> <span class="nav-text">输出描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">4.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">5.</span> <span class="nav-text">测试</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -812,6 +1020,8 @@
 
 
 
+
+  
 
 
   
@@ -1171,38 +1381,37 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .done(function() {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.time + 1);
+              })
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
           }
         })
         .fail(function ({ responseJSON }) {
@@ -1227,9 +1436,7 @@
             });
           };
           
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
+            addCount(Counter);
           
         });
     });
