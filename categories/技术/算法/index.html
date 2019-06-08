@@ -29,7 +29,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-radar.min.css?v=1.0.2">
 
 
 
@@ -931,8 +931,8 @@
     el: '#comments',
     verify: false,
     notify: true,
-    appId: 'Lu3CzJl1gikasSeFkRXiKx9f-gzGzoHsz',
-    appKey: 'C5aPPAjGvQUen2o3zk8ckj1F',
+    appId: 'atoADaE7luqHOJWxvn68tDVM-gzGzoHsz',
+    appKey: 'wL31Iel7XTO28Si1yvUkeea3',
     placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！',
     avatar: 'wavatar',
     meta: guest,
@@ -1344,15 +1344,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'Lu3CzJl1gikasSeFkRXiKx9f-gzGzoHsz')
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'atoADaE7luqHOJWxvn68tDVM-gzGzoHsz')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
               method: method,
               url: 'https://' + api_server + '/1.1' + url,
               headers: {
-                'X-LC-Id': 'Lu3CzJl1gikasSeFkRXiKx9f-gzGzoHsz',
-                'X-LC-Key': 'C5aPPAjGvQUen2o3zk8ckj1F',
+                'X-LC-Id': 'atoADaE7luqHOJWxvn68tDVM-gzGzoHsz',
+                'X-LC-Key': 'wL31Iel7XTO28Si1yvUkeea3',
                 'Content-Type': 'application/json',
               },
               data: data
