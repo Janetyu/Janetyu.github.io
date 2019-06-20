@@ -31,22 +31,56 @@
   <entry>
     <title><![CDATA[大数相加-golang实现]]></title>
     <url>%2F2019%2F06%2F14%2F%E5%A4%A7%E6%95%B0%E7%9B%B8%E5%8A%A0-golang%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[题目计算两个大数相加的和，这两个大数会超过int64的表示范围 解题思路既然数值已超过 int64，那就不能用数值的方式进行计算（当然也不可能这么简单），另辟蹊径，我们可以运用字符串的方式进行处理，这里注意边界判断处理以及进位的处理，特别是最后一个进位，如果忘记拼接到结果处，则会变成首位为 0 的尴尬情况。 代码实现1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889package mainimport ( "fmt" "bufio" "os" "strings")func bigNumSum(a, b string) (result string) { if len(a) == 0 && len(b) == 0 { result = "0" return } var index1 = len(a) - 1 var index2 = len(b) - 1 var add int // 进位 for index1 >= 0 && index2 >= 0 { c1 := a[index1] - '0' // ASCII转数字的方法 c2 := b[index2] - '0' sum := int(c1) + int(c2) + add if sum >= 10 { // 处理进位 add = 1 } else { add = 0 } c3 := (sum % 10) + '0' // 转回byte result = fmt.Sprintf("%c%s", c3, result) index1-- index2-- } for index1 >= 0 { c1 := a[index1] - '0' sum := int(c1) + add if sum >= 10 { // 处理进位 add = 1 } else { add = 0 } c3 := (sum % 10) + '0' // 转回byte result = fmt.Sprintf("%c%s", c3, result) // 注意%c在前 index1-- } for index2 >= 0 { c2 := b[index2] - '0' sum := int(c2) + add if sum >= 10 { // 处理进位 add = 1 } else { add = 0 } c3 := (sum % 10) + '0' // 转回byte result = fmt.Sprintf("%c%s", c3, result) // 注意%c在前 index2-- } if add == 1 { result = fmt.Sprintf("%d%s", add, result) } return}func main() { reader := bufio.NewReader(os.Stdin) result, _, err := reader.ReadLine() if err != nil { fmt.Println("read from console err : ",err) return } str := strings.Split(string(result), "+") if len(str) != 2 { fmt.Println("must input a+b") return } strNumber1 := strings.TrimSpace(str[0]) strNumber2 := strings.TrimSpace(str[1]) fmt.Println("the two big num Sum is ", bigNumSum(strNumber1, strNumber2))}]]></content>
+      <categories>
+        <category>技术</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>golang</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[统计字符个数-golang实现]]></title>
     <url>%2F2019%2F06%2F14%2F%E7%BB%9F%E8%AE%A1%E5%AD%97%E7%AC%A6%E4%B8%AA%E6%95%B0-golang%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[题目输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。 代码实现12345678910111213141516171819202122232425262728293031323334353637package mainimport ( "fmt" "bufio" "os")func count(str string) (wordCount, spaceCount, numberCount, otherCount int) { t := []rune(str) for _, v := range t { switch { case v >= 'a' && v = 'A' && v = '0' && v]]></content>
+      <categories>
+        <category>技术</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>golang</tag>
+        <tag>字符串</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[判断回文字符串-golang实现]]></title>
     <url>%2F2019%2F06%2F14%2F%E5%88%A4%E6%96%AD%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2-golang%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[题目输入一个字符串，判断其是否为回文。回文字符串是指从左到右读和从右到左读完全相同的字符串。 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445package mainimport "fmt"// 不适用于中文，因为一个中文占3个字节，转成 rune 字符类型进行判断func process(str string) bool { for i := 0; i < len(str); i++ { if i == len(str)/2 { // 终止条件 break } last := len(str) - i -1 if str[i] != str[last] { return false } } return true}// 适用于中文，英文，数字func process2(str string) bool { t := []rune(str) length := len(t) for i, _ := range t { if i == length/2 { // 终止条件 break } last := length - i -1 if t[i] != t[last] { return false } } return true}func main() { var str string fmt.Scanf("%s",&str) if process(str) { fmt.Printf("%s 是回文串", str) } else { fmt.Printf("%s 不是回文串", str) }}]]></content>
+      <categories>
+        <category>技术</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>golang</tag>
+        <tag>字符串</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[找出完数-golang实现]]></title>
     <url>%2F2019%2F06%2F14%2F%E6%89%BE%E5%87%BA%E5%AE%8C%E6%95%B0-golang%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[题目一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程找出1000以内的所有完数。 代码实现1234567891011121314151617181920212223242526package mainimport ( "fmt")func isPerfectNum(num int) bool { var sum int for i := 1; i < num; i++ { if num % i == 0 { sum += i } } return sum == num}func main() { var start,end int fmt.Scanf("%d %d",&start,&end) for i := start; i]]></content>
+      <categories>
+        <category>技术</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>golang</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【剑指offer】替换空格]]></title>
@@ -78,7 +112,7 @@
   <entry>
     <title><![CDATA[n的阶乘之和-golang实现]]></title>
     <url>%2F2019%2F05%2F31%2Fn%E7%9A%84%E9%98%B6%E4%B9%98%E4%B9%8B%E5%92%8C-golang%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[题目对于一个数n，求n的阶乘之和，即： 1！ + 2！ + 3！+…n! 代码12345678910111213141516171819202122232425package mainimport (4"fmt")func sum(n int) uint64 {4var s uint64 = 1 var sum uint64 = 0 // 3! = 2！* 1 for i := 1; i]]></content>
+    <content type="text"><![CDATA[题目对于一个数n，求n的阶乘之和，即： 1！ + 2！ + 3！+…n! 代码12345678910111213141516171819202122232425package mainimport ( "fmt")func sum(n int) uint64 { var s uint64 = 1 var sum uint64 = 0 // 3! = 2！* 1 for i := 1; i]]></content>
       <categories>
         <category>技术</category>
         <category>算法</category>
@@ -91,7 +125,7 @@
   <entry>
     <title><![CDATA[求水仙花数-golang实现]]></title>
     <url>%2F2019%2F05%2F31%2F%E6%B1%82%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0-golang%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[题目打印出100-999中所有的“水仙花数”，所谓“水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153 是一个“水仙花数”，因为 153 = 1的三次方 ＋ 5的三次方 ＋ 3的三次方。 代码：方式一12345678910111213141516171819202122232425262728package mainimport(4"fmt")func isNumber(n int) bool { var i, j, k int i = n % 10 j = (n / 10) % 10 k = (n / 100) % 10 sum := i*i*i + k*k*k + j*j*j return sum == n}func main(){ var m int var n int // scanf 默认是空格分隔的 fmt.Scanf("%d%d", &n, &m) for i := n; i < m; i++ { if isNumber(i) { fmt.Println(i) } }} 代码：方式二1234567891011121314151617181920212223242526272829package mainimport(4"fmt" "strconv")func main() { var str string fmt.Scanf("%s", &str) var result = 0 for i := 0; i < len(str); i++ { num := int(str[i] - '0') // ASCII result += (num * num * num) } number, err := strconv.Atoi(str) if err != nil { fmt.Printf("can not convert %s to int\n", str) return } if result == number { fmt.Printf("%d is shuixianhuashu\n", number) } else { fmt.Printf("%d is not shuixianhuashu", number) }}]]></content>
+    <content type="text"><![CDATA[题目打印出100-999中所有的“水仙花数”，所谓“水仙花数”是指一个三位数，其各位数字立方和等于该数本身。例如：153 是一个“水仙花数”，因为 153 = 1的三次方 ＋ 5的三次方 ＋ 3的三次方。 代码：方式一12345678910111213141516171819202122232425262728package mainimport( "fmt")func isNumber(n int) bool { var i, j, k int i = n % 10 j = (n / 10) % 10 k = (n / 100) % 10 sum := i*i*i + k*k*k + j*j*j return sum == n}func main(){ var m int var n int // scanf 默认是空格分隔的 fmt.Scanf("%d%d", &n, &m) for i := n; i < m; i++ { if isNumber(i) { fmt.Println(i) } }} 代码：方式二1234567891011121314151617181920212223242526272829package mainimport( "fmt" "strconv")func main() { var str string fmt.Scanf("%s", &str) var result = 0 for i := 0; i < len(str); i++ { num := int(str[i] - '0') // ASCII result += (num * num * num) } number, err := strconv.Atoi(str) if err != nil { fmt.Printf("can not convert %s to int\n", str) return } if result == number { fmt.Printf("%d is shuixianhuashu\n", number) } else { fmt.Printf("%d is not shuixianhuashu", number) }}]]></content>
       <categories>
         <category>技术</category>
         <category>算法</category>
