@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[【剑指offer】重建二叉树]]></title>
-    <url>%2F2019%2F06%2F15%2F%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
+    <title><![CDATA[TCP与UDP的区别]]></title>
+    <url>%2F2019%2F12%2F01%2FTCP%E4%B8%8EUDP%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[TCP 与 UDP 的特点 TCP 是基于连接的可靠的传输协议，UDP 是基于无连接的不可靠的传输协议 TCP 提供超时重传、丢弃重复数据、检验数据、流量控制等功能，UDP 没有提供这些功能。 提供这些功能会加大网络带宽的开销，“虚拟信道”和网络中的大量“ ACK、FIN ”包是最主要的开销。 TCP 因为开销的原因，不适合作为实时通信，因此会选择开销很小的 UDP 协议。 UDP 因为是无连接不可靠的，没有重传机制，因此会发生丢包、收到重复包、乱序等问题。 总结TCP 与 UDP 的区别 基于连接与无连接 TCP 提供可靠的传输，有确认机制，UDP 不提供可靠性，不能保证数据能达到目的地 对于系统网络资源的开销（TCP 多，UDP 少） TCP 结构相对复杂，UDP 结构简单 TCP 面向字节流模式，会保证服务端按顺序接收到全部的字节流，UDP 面向数据报模式，不保证顺序性 运用强调数据传输的完整性、可靠性、可控制性，选择 TCP 协议， 强调数据传输的性能，选择 UDP 协议，如：音频、多媒体应用、DNS 交换。 TCP 功能丰富，但相对的性能会降低。]]></content>
+      <categories>
+        <category>技术</category>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指offer-重建二叉树]]></title>
+    <url>%2F2019%2F06%2F15%2F%E5%89%91%E6%8C%87offer-%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
     <content type="text"><![CDATA[题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 输入 前序遍历序列{1,2,4,7,3,5,6,8} 中序遍历序列{4,7,2,1,5,3,8,6} 则重建二叉树并返回。 分析这道题还是比较简单的，我们知道 前序遍历的顺序为：根左右 中序遍历的顺序为：左根右 递归思想: 我们先根据前序遍历序列的第一个确定根，然后在中序遍历的序列中找到根的位置，根左边的就是其左子树，右边就是其右子树 构建根和左右子树 递归的进行1和2 实现思路1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768package mainimport ( "fmt")type TreeNode struct { Val int Left *TreeNode Right *TreeNode}func printPreOrder(root *TreeNode) { if root != nil { fmt.Printf("%d ", root.Val) printInOrder(root.Left) printInOrder(root.Right) }}func printInOrder(root *TreeNode) { if root != nil { printInOrder(root.Left) fmt.Printf("%d ", root.Val) printInOrder(root.Right) }}func reConstructBinaryTree(pre []int,in []int) *TreeNode { if len(pre) != len(in) || len(pre) == 0 { return nil } // find root in preOrder and rootIndex in InOrder rootVal := pre[0] rootIndex := 0 for i := 0; i < len(in) ; i++ { if in[i] == rootVal { rootIndex = i } } inL,inR := in[:rootIndex],in[rootIndex+1:] preL, preR := pre[1:rootIndex+1],pre[rootIndex+1:] Left := reConstructBinaryTree(preL,inL) Right := reConstructBinaryTree(preR,inR) return &TreeNode{Val: rootVal, Left: Left, Right: Right}}func main() { pre := []int{1,2,4,7,3,5,6,8} in := []int{4,7,2,1,5,3,6,8} fmt.Println("preOder: ", pre) fmt.Println("inOrder: ", in) // Reconstruct fmt.Println("\nReconstruct Binary Tree... \n ",) root := reConstructBinaryTree(pre, in) // test fmt.Printf("preOder from Tree reconstructed: ") printPreOrder(root) fmt.Printf("\n") fmt.Printf("inOder from Tree reconstructed: ") printInOrder(root) fmt.Printf("\n")}]]></content>
       <categories>
         <category>技术</category>
@@ -15,8 +27,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【剑指offer】从尾到头打印链表]]></title>
-    <url>%2F2019%2F06%2F14%2F%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8%2F</url>
+    <title><![CDATA[剑指offer-从尾到头打印链表]]></title>
+    <url>%2F2019%2F06%2F14%2F%E5%89%91%E6%8C%87offer-%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[题目描述输入一个链表，从尾到头打印链表每个节点的值。 输入描述: 输入为链表的表头 输出描述: 输出为需要打印的“新链表”的表头 反转链表首先我们想到的就是反转链表了,如果把链表反转了，然后再返回头，这样再次遍历的时候就相当于从尾到头打印了。 但是修改输入数据真的可行么？ 剑指Offer中为我们在面试中提出了如下小提示 在面试时候，如果我们打算修改输入的数据，最好先问问面试官是不是允许修改 通常打印只是一个只读操作，我们肯定不希望输入时候修改链表的内容 如果要求反转的话，直接头插法就可以了 实现思路12345678910111213141516171819202122232425262728293031package mainimport (4"fmt")type NodeList struct { Val int Next *NodeList}// 不修改输入数据，只从尾到头打印链表func printListFromTailToHead(head *NodeList) { if head != nil { printListFromTailToHead(head.Next) fmt.Printf("%d ->", head.Val) }}func main() { n3 := &NodeList(3, nil) n2 := &NodeList(2, n3) n1 := &NodeList(1, n2) fmt.Printf("\n NodeList 1 -> 2 -> 3 \n") //test fmt.Printf("\n Output: ") printListFromTailToHead(n1) fmt.Printf("\n \n")}]]></content>
       <categories>
         <category>技术</category>
@@ -83,8 +95,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【剑指offer】替换空格]]></title>
-    <url>%2F2019%2F06%2F12%2F%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC%2F</url>
+    <title><![CDATA[剑指offer-替换空格]]></title>
+    <url>%2F2019%2F06%2F12%2F%E5%89%91%E6%8C%87offer-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC%2F</url>
     <content type="text"><![CDATA[题目描述请实现一个函数，将一个字符串中的空格替换成“%20”。 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 We Are Happy We%20Are%20Happy 如果不考虑在原来的字符串上替换的话, 那么我们直接再开一个数组，从前往后依次赋值 遇见空格，就填上%20, 否则就填当前字符。 但是这个肯定不是面试官期待的 那么怎么在原字符串上进行高效的替换呢？ 实现思路123456789101112131415161718192021222324package mainfunc replaceSpace(str []byte, length int) string { count := 0 for i := 0; i < length -1; i++ { count++ } newlength := length + count*2 for l, nl := length-1;newlength-1; l > 0 && nl > 0 ;{ if str[l] == ' ' { str[nl] = '0' nl-- str[nl] = '2' nl-- str[nl] = '%' nl-- l-- } else { str[nl] = str[l] nl-- l-- } }} 测试123456789101112131415161718192021222324252627282930313233343536373839404142package mainimport ( "testing" "github.com/stretchr/testify/assert")type para struct { str []byte length int}type ans struct { res []byte}type question struct { p para a ans}func Test_OK(t *testing.T) { ast := assert.New(t) qs := []question{ question{ p: para{ str: []byte{'a',' ','b',' ','c','x','x','x','x'}, length: 5, }, a: ans{ res: []byte{'a','%','2','0','b','%','2','0','c'}, }, }, } for _, q := range qs { a, p := q.a, q.p replaceSpace(p.str, p.length) ast.Equal(string(a.res), string(p.str), "输入:%v", p) }}]]></content>
       <categories>
         <category>技术</category>
@@ -149,8 +161,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【剑指offer】二维数组中的查找]]></title>
-    <url>%2F2019%2F05%2F29%2F%E3%80%90%E5%89%91%E6%8C%87offer%E3%80%91%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE%2F</url>
+    <title><![CDATA[剑指offer-二维数组中的查找]]></title>
+    <url>%2F2019%2F05%2F29%2F%E5%89%91%E6%8C%87offer-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 输入描述 array： 待查找的二维数组 target：查找的数字 输出描述 查找到返回true，查找不到返回false 实现思路123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566package problem003// 用了分治的思想，根据题意可得// 从数组中选取数字，和目标数字的关系有三种情况：=，。// 如果是等于则查找成功；// 如果是数组中元素小于要查找的数字，说明要查找的数字应该在当前位置的右边或下边。// 如果是数组中元素大于要查找的数字，说明要查找的数字应该在当前位置的左边或上边。// 即 对于数组中的任何一个元素, 比它小的元素都在它的左方或者上方, 比它大的元素都在它的右边或者下方// 但是这两个区域还有可能有重叠，比如右边或下边会在右下角有重叠。// 为了不重复的处理重叠的数据, 我们可以找几个特殊的起点, 比如// 起点 性质 可否作为起点// 左上角 没有上方元素(小)和左方元素(小)// 只有下方元素(大)和右方元素(大) 否// 右上角 没有上方元素(小), 和右方元素(大)// 只有下方元素(大)和左方元素(小) 是// 左下角 没有下方元素(大), 和左方元素(小)// 只有上方元素(小)和右方元素(大) 是// 右下角 没有下方元素(大), 和右方元素(大)// 只有上方元素(小)和左方元素(小) 否// 因此重叠问题的解决方法：// 如果查找从右上角开始，如果要查找的数字不在右上角，则每次可以剔除一列或一行。// 也可以从左下角开始// 但是不能从左上角或者右下角开始。func Find(board [][]int, target int) bool { rlen := len(board) // 行 clen := len(board[0]) // 列 // 从右上角开始查找 for r,c := 0, clen-1; r < rlen-1 && c > 0; { if board[r][c] == target { return true } if board[r][c] > target { // 往左边查找 c-- continue } else { // 往下边查找 r++ } } return false // 从左下角开始查找 // for r,c := rlen-1, 0; r > 0 && c < clen-1; { // if board[r][c] == target { // return true // } // if board[r][c] > target { // // 往上边查找 // r-- // } else { // // 往右边查找 // c++ // continue // } // } // return false} 测试1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859package problem003import ( "testing" "github.com/stretchr/testify/assert")type para struct { board [][]int target int}type ans struct { find bool}type question struct { p para a ans}func Test_OK(t *testing.T) { ast := assert.New(t) qs := []question{ question{ p: para{ board: [][]int{ []int{ 1, 2, 8, 9, }, []int{ 2, 4, 9, 12, }, []int{ 4, 7, 10, 13, }, []int{ 6, 8, 11, 15, }, }, target: 7, }, a: ans{ find: true, }, }, question{ p: para{ board: [][]int{ []int{ 1, 2, 8, 9, }, []int{ 2, 4, 9, 12, }, []int{ 4, 6, 10, 13, }, []int{ 6, 8, 11, 15, }, }, target: 7, }, a: ans{ find: false, }, }, } for _, q := range qs { a, p := q.a, q.p ast.Equal(a.find, Find(p.board, p.target), "输入:%v", p) }}]]></content>
       <categories>
         <category>技术</category>
@@ -160,18 +172,6 @@
       <tags>
         <tag>算法</tag>
         <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[计算机网络(一)]]></title>
-    <url>%2F2019%2F05%2F28%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E4%B8%80%2F</url>
-    <content type="text"><![CDATA[计算机网络定义 定义：计算机网络是一个将分散的、具有独立功能的计算机系统（端系统），通过通信设备（交换机、路由器）与线路（通信设备与端系统连接的介质）连接起来，由功能完善的软件实现资源共享和信息传递的系统。 计算机网络就是互连、自治的计算机集合。 计算机网络功能 数据通信 连通性 资源共享 硬件 软件 数据 分布式处理 多台计算机各自承担同一工作任务的不同部分 Hadoop平台 提高可靠性 替代机 负载均衡 … 计算机组成部分 组成部分 硬件 软件 协议 工作方式 边缘部分（用户直接使用） C/S方式 P2P方式 核心部分（为边缘部分服务） 路由器 网络 功能组成 通信子网 实现数据通信 资源子网 实现资源共享/数据处理 计算机网络分类 按分布范围 广域网WAN 交换技术 城域网MAN 局域网LAN 广播技术 个人区域网PAN 按使用者分 公用网 专用网 按交换技术分 电路交换 报文交换 分组交换 按拓扑结构来分 总线型 星型 环型 网状型 常用于广域网 按传输技术分 广播式网络 共享公共通信信道 点对点网络 使用分组存储转发和路由选择机制 标准化工作及组织国际标准化组织ISO 制定了OSI参考模型和HDLC协议 性能指标速率速率即数据率或称数据传输率或比特率 带宽在计算机网络中，带宽指网络的通信线路传送数据的能力，通常指单位时间内传输的”最高数据率“，单位是”比特每秒”, b/s，kb/s，Mb/s，Gb/s。 简而言之，可以理解为网络设备所支持的最高速度。 吞吐量表示在单位时间内通过某个网络 或信道、接口的数据量。单位 b/s，kb/s，Mb/s等。受网络的带宽和额定速率限制。 时延指数据从网络或链路的一端到另一端所需时间，也叫延时或迟延，单位为s。 发送时延(传输时延) 传播时延 排队时延 处理时延 时延带宽积时延带宽积(bit) = 传播时延(s) x 带宽(b/s) 时延带宽积本质上是以比特为单位的链路长度，也就是某链路此时此刻的数据容量。 往返时延RTT从发送方发送数据开始，到发送方收到接收方的确认(接收方收到数据后立即发送确认)，总经历的时延。 注：RTT越大，在收到确认之前，可以发送的数据越多。 RTT包括 往返传播时延 = 传播时延 * 2 末端处理时间 利用率 信道利用率 网络利用率]]></content>
-      <categories>
-        <category>技术</category>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>

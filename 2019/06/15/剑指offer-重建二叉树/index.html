@@ -109,21 +109,18 @@
 
 
 </head><body></body></html>
-  <meta name="description" content="哈希表是一种以键值对来组织数据的数据结构，它需要哈希函数，用来支持快速地插入和搜索数据。  哈希表的原理 哈希表的关键是通过哈希函数，将键( key )映射到存储桶(Bucket)： \1.  当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中； \2.  当我们想要搜索一个键时，哈希表将使用相同的哈希函数来查找对应的桶，并只在特定的桶中进行搜索。 设计哈希表">
-<meta name="keywords" content="算法,hashmap">
+  <meta name="description" content="题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 输入  前序遍历序列{1,2,4,7,3,5,6,8} 中序遍历序列{4,7,2,1,5,3,8,6}  则重建二叉树并返回。 分析这道题还是比较简单的，我们知道 前序遍历的顺序为：根左右 中序遍历的顺序为：左根右 递归思想:  我们先根据前序遍历序列的第一个确定根，然后在中">
+<meta name="keywords" content="算法,剑指offer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="哈希表入门">
-<meta property="og:url" content="https://janetyu.github.io/2019/05/24/哈希表入门/index.html">
+<meta property="og:title" content="剑指offer-重建二叉树">
+<meta property="og:url" content="https://janetyu.github.io/2019/06/15/剑指offer-重建二叉树/index.html">
 <meta property="og:site_name" content="JianLinker Blog">
-<meta property="og:description" content="哈希表是一种以键值对来组织数据的数据结构，它需要哈希函数，用来支持快速地插入和搜索数据。  哈希表的原理 哈希表的关键是通过哈希函数，将键( key )映射到存储桶(Bucket)： \1.  当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中； \2.  当我们想要搜索一个键时，哈希表将使用相同的哈希函数来查找对应的桶，并只在特定的桶中进行搜索。 设计哈希表">
+<meta property="og:description" content="题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 输入  前序遍历序列{1,2,4,7,3,5,6,8} 中序遍历序列{4,7,2,1,5,3,8,6}  则重建二叉树并返回。 分析这道题还是比较简单的，我们知道 前序遍历的顺序为：根左右 中序遍历的顺序为：左根右 递归思想:  我们先根据前序遍历序列的第一个确定根，然后在中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/QhiaEpmLXYbmt48fticibjPf84vLVwOlYGiaCSsx1PibPtR6FEQJFDORf2kEGUp4uJC0ZIYzBVEhcvlBczLuSB163jg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/QhiaEpmLXYblicLQVuyvy5rWOHupgao0XiaPaxh8XIEUNZHBo2WBnGvvmicsAceUpTrIeibsx9fZ3A2dLdNumRYtwIA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
-<meta property="og:updated_time" content="2019-05-24T02:44:48.990Z">
+<meta property="og:updated_time" content="2019-11-30T12:48:43.883Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="哈希表入门">
-<meta name="twitter:description" content="哈希表是一种以键值对来组织数据的数据结构，它需要哈希函数，用来支持快速地插入和搜索数据。  哈希表的原理 哈希表的关键是通过哈希函数，将键( key )映射到存储桶(Bucket)： \1.  当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中； \2.  当我们想要搜索一个键时，哈希表将使用相同的哈希函数来查找对应的桶，并只在特定的桶中进行搜索。 设计哈希表">
-<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/QhiaEpmLXYbmt48fticibjPf84vLVwOlYGiaCSsx1PibPtR6FEQJFDORf2kEGUp4uJC0ZIYzBVEhcvlBczLuSB163jg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta name="twitter:title" content="剑指offer-重建二叉树">
+<meta name="twitter:description" content="题目描述输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。 输入  前序遍历序列{1,2,4,7,3,5,6,8} 中序遍历序列{4,7,2,1,5,3,8,6}  则重建二叉树并返回。 分析这道题还是比较简单的，我们知道 前序遍历的顺序为：根左右 中序遍历的顺序为：左根右 递归思想:  我们先根据前序遍历序列的第一个确定根，然后在中">
 
 
 
@@ -131,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="https://janetyu.github.io/2019/05/24/哈希表入门/"/>
+  <link rel="canonical" href="https://janetyu.github.io/2019/06/15/剑指offer-重建二叉树/"/>
 
 
 
@@ -141,7 +138,7 @@
   };
 </script>
 
-  <title>哈希表入门 | JianLinker Blog</title>
+  <title>剑指offer-重建二叉树 | JianLinker Blog</title>
   
 
 
@@ -401,7 +398,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://janetyu.github.io/2019/05/24/哈希表入门/"/>
+    <link itemprop="mainEntityOfPage" href="https://janetyu.github.io/2019/06/15/剑指offer-重建二叉树/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JianLinker"/>
@@ -418,7 +415,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">哈希表入门
+          <h1 class="post-title" itemprop="name headline">剑指offer-重建二叉树
 
               
             
@@ -444,12 +441,24 @@
                 
               
 
-              <time title="创建时间：2019-05-24 09:50:42 / 修改时间：02:44:48" itemprop="dateCreated datePublished" datetime="2019-05-24T09:50:42Z">2019-05-24</time>
+              <time title="创建时间：2019-06-14 22:21:15" itemprop="dateCreated datePublished" datetime="2019-06-14T22:21:15Z">2019-06-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-30 12:48:43" itemprop="dateModified" datetime="2019-11-30T12:48:43Z">2019-11-30</time>
               
             
           </span>
@@ -477,6 +486,13 @@
 
                 
                 
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/算法/二叉树/" itemprop="url" rel="index"><span itemprop="name">二叉树</span></a></span>
+
+                
+                
               
             </span>
           
@@ -492,8 +508,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/24/哈希表入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/24/哈希表入门/" itemprop="commentCount"></span>
+                <a href="/2019/06/15/剑指offer-重建二叉树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/15/剑指offer-重建二叉树/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -501,7 +517,7 @@
 
           
           
-            <span id="/2019/05/24/哈希表入门/" class="leancloud_visitors" data-flag-title="哈希表入门">
+            <span id="/2019/06/15/剑指offer-重建二叉树/" class="leancloud_visitors" data-flag-title="剑指offer-重建二叉树">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -533,92 +549,22 @@
       
 
       
-        <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><blockquote>
-<p>哈希表是一种<strong>以键值对来组织数据</strong>的数据结构，它需要<strong>哈希函数</strong>，用来支持<strong>快速地插入和搜索数据</strong>。</p>
-</blockquote>
-<p><strong>哈希表的原理</strong></p>
-<p>哈希表的关键是通过哈希函数，将键( key )<strong>映射到</strong>存储桶(Bucket)：</p>
-<p>\1.  当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中；</p>
-<p>\2.  当我们想要搜索一个键时，哈希表将使用相同的哈希函数来查找对应的桶，并只在特定的桶中进行搜索。</p>
-<p><strong>设计哈希表的关键</strong></p>
-<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><p>哈希函数是哈希表中最重要的组件，该哈希表用于将键映射到特定的桶。</p>
-<p>哈希函数（散列函数）取决于<strong>键值的范围</strong>和<strong>桶的数量</strong>。</p>
-<p>可以看一下哈希函数的示例：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/QhiaEpmLXYbmt48fticibjPf84vLVwOlYGiaCSsx1PibPtR6FEQJFDORf2kEGUp4uJC0ZIYzBVEhcvlBczLuSB163jg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<p>设计哈希函数的思想是<strong>尽可能将键分配到桶中</strong>，理想情况下，完美的哈希函数将是键和桶之间的一对一映射，然而很多时候是没办法达到完美的，只能在<strong>桶的数量</strong>和<strong>桶的容量</strong>之间做出权衡。</p>
-<h2 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h2><p>在大多数情况下，冲突几乎是不可避免的。</p>
-<p>假设我们用 <strong>y  =  x ％ 5</strong> 作为哈希函数，1987 和 2 都分配给了桶 2，这是一个<strong>冲突</strong>。</p>
-<p>冲突解决算法应该解决以下几个问题：</p>
-<p>\1. 如何组织在同一个桶中的值？</p>
-<p>\2. 如果为同一个桶分配了太多的值，该怎么办？</p>
-<p>\3. 如何在特定的桶中搜索目标值？</p>
-<p>这些问题都跟<strong>桶的容量</strong>和可能映射到<strong>同一个桶</strong>的<strong>键的数量</strong>有关。</p>
-<p>一般来说，假设一个桶的<strong>最大存储键的数量</strong>为 n ，如果这个 n 是常数或者比较小，可以直接用一个数组来代表桶，如果这个 n 是可变或很大，我们就需要用到<strong>高度平衡的二叉树</strong>来做了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/QhiaEpmLXYblicLQVuyvy5rWOHupgao0XiaPaxh8XIEUNZHBo2WBnGvvmicsAceUpTrIeibsx9fZ3A2dLdNumRYtwIA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<h2 id="通过代码理解哈希表"><a href="#通过代码理解哈希表" class="headerlink" title="通过代码理解哈希表"></a>通过代码理解哈希表</h2><p><strong>no code no talk</strong>. 了解了哈希的基本概念后，怎么也得去学一下用代码实现才能真正地理解吧。</p>
-<p>下面就用 golang 来实现简单的 <strong>哈希集合 hashset</strong> 与 <strong>哈希映射 hashmap</strong>。要知道，哈希表中插入和搜索是最基本的操作了，实现中也是主要包含这些部分。</p>
-<p>建议看到要求后，自己想一想该怎么实现比较好，用自己擅长的语言即可。</p>
-<h4 id="设计哈希集合"><a href="#设计哈希集合" class="headerlink" title="设计哈希集合"></a>设计哈希集合</h4><p><strong>要求：</strong></p>
+        <html><head><meta name="generator" content="Hexo 3.8.0"></head><body><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。</p>
+<p>假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
+<p>输入</p>
 <blockquote>
-<p>不使用任何内建的哈希表库设计一个哈希集合</p>
-<p>具体地说，你的设计应该包含以下的功能</p>
-<ul>
-<li><code>add(value)</code>：向哈希集合中插入一个值。</li>
-<li><code>contains(value)</code> ：返回哈希集合中是否存在这个值。</li>
-<li><code>remove(value)</code>：将给定值从哈希集合中删除。如果哈希集合中没有这个值，什么也不做。</li>
-</ul>
+<p>前序遍历序列{1,2,4,7,3,5,6,8} 中序遍历序列{4,7,2,1,5,3,8,6}</p>
 </blockquote>
-<p><strong>示例:</strong></p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">> MyHashSet hashSet = new MyHashSet();</span><br><span class="line">> </span><br><span class="line">> hashSet.add(1);         </span><br><span class="line">> </span><br><span class="line">> hashSet.add(2);         </span><br><span class="line">> </span><br><span class="line">> hashSet.contains(1);    // 返回 true</span><br><span class="line">> </span><br><span class="line">> hashSet.contains(3);    // 返回 false (未找到)</span><br><span class="line">> </span><br><span class="line">> hashSet.add(2);          </span><br><span class="line">> </span><br><span class="line">> hashSet.contains(2);    // 返回 true</span><br><span class="line">> </span><br><span class="line">> hashSet.remove(2);          </span><br><span class="line">> </span><br><span class="line">> hashSet.contains(2);    // 返回  false (已经被删除)</span><br><span class="line">></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>注意：</strong></p>
-<blockquote>
-<ul>
-<li>所有的值都在 <code>[1, 1000000]</code>的范围内。</li>
-<li>操作的总数目在<code>[1, 10000]</code>范围内。</li>
-<li>不要使用内建的哈希集合库。</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">type MyHashSet struct {</span><br><span class="line"></span><br><span class="line">   table []bool </span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/** Initialize your data structure here. */</span><br><span class="line"></span><br><span class="line">func Constructor() MyHashSet {</span><br><span class="line"></span><br><span class="line">  return MyHashSet{table:make([]bool,1000001)} </span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">func (this *MyHashSet) Add(key int)  {</span><br><span class="line"></span><br><span class="line">   this.table[key] = true </span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">func (this *MyHashSet) Remove(key int)  {</span><br><span class="line"></span><br><span class="line">   this.table[key] = false </span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/** Returns true if this set contains the specified element */</span><br><span class="line"></span><br><span class="line">func (this *MyHashSet) Contains(key int) bool {</span><br><span class="line"></span><br><span class="line">  return this.table[key]</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"></span><br><span class="line"> * Your MyHashSet object will be instantiated and called as such:</span><br><span class="line"></span><br><span class="line"> * obj := Constructor();</span><br><span class="line"></span><br><span class="line"> * obj.Add(key);</span><br><span class="line"></span><br><span class="line"> * obj.Remove(key);</span><br><span class="line"></span><br><span class="line"> * param_3 := obj.Contains(key);</span><br><span class="line"></span><br><span class="line"> */</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="设计哈希映射"><a href="#设计哈希映射" class="headerlink" title="设计哈希映射"></a>设计哈希映射</h4><p><strong>要求:</strong></p>
-<blockquote>
-<p>不使用任何内建的哈希表库设计一个哈希映射</p>
-<p>具体地说，你的设计应该包含以下的功能</p>
-<ul>
-<li><code>put(key, value)</code>：向哈希映射中插入(键,值)的数值对。如果键对应的值已经存在，更新这个值。</li>
-<li><code>get(key)</code>：返回给定的键所对应的值，如果映射中不包含这个键，返回-1。</li>
-<li><code>remove(key)</code>：如果映射中存在这个键，删除这个数值对。</li>
-</ul>
-</blockquote>
-<p><strong>示例：</strong></p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">> MyHashMap hashMap = new MyHashMap();</span><br><span class="line">> </span><br><span class="line">> hashMap.put(1, 1);          </span><br><span class="line">> </span><br><span class="line">> hashMap.put(2, 2);         </span><br><span class="line">> </span><br><span class="line">> hashMap.get(1);            // 返回 1</span><br><span class="line">> </span><br><span class="line">> hashMap.get(3);            // 返回 -1 (未找到)</span><br><span class="line">> </span><br><span class="line">> hashMap.put(2, 1);         // 更新已有的值</span><br><span class="line">> </span><br><span class="line">> hashMap.get(2);            // 返回 1 </span><br><span class="line">> </span><br><span class="line">> hashMap.remove(2);         // 删除键为2的数据</span><br><span class="line">> </span><br><span class="line">> hashMap.get(2);            // 返回 -1 (未找到) </span><br><span class="line">></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>注意：</strong></p>
-<blockquote>
-<ul>
-<li>所有的值都在 <code>[1, 1000000]</code>的范围内。</li>
-<li>操作的总数目在<code>[1, 10000]</code>范围内。</li>
-<li>不要使用内建的哈希库。</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line">type KV struct {</span><br><span class="line"></span><br><span class="line">    K int</span><br><span class="line"></span><br><span class="line">    V int</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">type MyHashMap struct {</span><br><span class="line"></span><br><span class="line">    data [1000][]KV</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">func hash(key int) int {</span><br><span class="line"></span><br><span class="line">    return key%1000</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/** Initialize your data structure here. */</span><br><span class="line"></span><br><span class="line">func Constructor() MyHashMap {</span><br><span class="line"></span><br><span class="line">    return MyHashMap{[1000][]KV{}}</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/** value will always be non-negative. */</span><br><span class="line"></span><br><span class="line">func (this *MyHashMap) Put(key int, value int)  {</span><br><span class="line"></span><br><span class="line">    h := hash(key)</span><br><span class="line"></span><br><span class="line">    bkt := this.data[h]</span><br><span class="line"></span><br><span class="line">    insert := -1</span><br><span class="line"></span><br><span class="line">    for i := 0; i < len(bkt); i++ {</span><br><span class="line"></span><br><span class="line">        if bkt[i].K == key {</span><br><span class="line"></span><br><span class="line">            bkt[i].V = value</span><br><span class="line"></span><br><span class="line">            return</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        if bkt[i].K == -1 {</span><br><span class="line"></span><br><span class="line">            insert = i</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    if insert != -1 {</span><br><span class="line"></span><br><span class="line">        bkt[insert].K = key</span><br><span class="line"></span><br><span class="line">        bkt[insert].V = value</span><br><span class="line"></span><br><span class="line">    } else {</span><br><span class="line"></span><br><span class="line">        this.data[h] = append(bkt, KV{key, value})   </span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */</span><br><span class="line"></span><br><span class="line">func (this *MyHashMap) Get(key int) int {</span><br><span class="line"></span><br><span class="line">    h := hash(key)</span><br><span class="line"></span><br><span class="line">    bkt := this.data[h]</span><br><span class="line"></span><br><span class="line">    for _, k := range bkt {</span><br><span class="line"></span><br><span class="line">        if k.K == key {</span><br><span class="line"></span><br><span class="line">            return k.V</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    return -1</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/** Removes the mapping of the specified value key if this map contains a mapping for the key */</span><br><span class="line"></span><br><span class="line">func (this *MyHashMap) Remove(key int)  {</span><br><span class="line"></span><br><span class="line">    h := hash(key)</span><br><span class="line"></span><br><span class="line">    bkt := this.data[h]</span><br><span class="line"></span><br><span class="line">    for i := 0; i < len(bkt); i++ {</span><br><span class="line"></span><br><span class="line">        if bkt[i].K == key {</span><br><span class="line"></span><br><span class="line">            bkt[i].K = -1</span><br><span class="line"></span><br><span class="line">            return</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"></span><br><span class="line"> * Your MyHashMap object will be instantiated and called as such:</span><br><span class="line"></span><br><span class="line"> * obj := Constructor();</span><br><span class="line"></span><br><span class="line"> * obj.Put(key,value);</span><br><span class="line"></span><br><span class="line"> * param_2 := obj.Get(key);</span><br><span class="line"></span><br><span class="line"> * obj.Remove(key);</span><br><span class="line"></span><br><span class="line"> */</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>以上代码借鉴于 leetcode</p>
-</blockquote>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>关于哈希表的空间复杂度，其实也比较明显了，也就是当有 M 个键的时候，那哈希表的空间复杂度也是 O(M) 。</p>
-<h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>而时间复杂度呢，按照上面的说法，即跟桶的最大存储键值得大小有关，如果存储最大值是个常数，我们可以用<strong>数组</strong>来当桶，那插入和搜索的时间复杂度都是 <strong>O(1)</strong>。</p>
-<p>如果在最坏的情况下，桶大小的最大值将为 <strong>N</strong>，也就是可变的，那我们就会用到<strong>高度平衡的二叉树</strong>作为桶。插入时时间复杂度为 <strong>O(1)</strong>，搜索时为 <strong>O(N)</strong>。</p>
-<p><strong>内置的哈希表原理</strong></p>
-<p>内置哈希表的典型设计是：</p>
-<p>\1.  键值可以是任何<strong>可哈希化</strong>的类型。并且属于可哈希类型的值将具有<strong>hashcode</strong> 。此 <strong>hashcode</strong> 可以通过映射函数来获得存储区索引。</p>
-<p>\2.  每个桶包含一个<strong>数组</strong>，用于在初始时将所有值存储在同一个桶中。</p>
-<p>\3.  如果在同一个桶中有<strong>太多的值</strong>（会设置临界值进行判断），这些值将被保留在一个高度平衡的二叉树搜索树中。</p>
-<p>这样设计带来的好处便是，插入和搜索的平均时间复杂度仍为 O(1)。</p>
-<p>最坏情况下插入和搜索的时间复杂度是 <strong>O(logN)</strong>，使用<strong>高度平衡的 BST</strong>。很显然，这需要对这个临界值的设置有巧妙的处理。</p>
-<p>今天就讲这么多啦，希望通过本篇的讲解，能让大家对哈希表的结构及原理有更深刻的认识，也十分欢迎大家能在评论区发表自己的看法哦</p>
-<p>我是鱼卷少年，我们下次见。</p>
+<p>则重建二叉树并返回。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>这道题还是比较简单的，我们知道</p>
+<p>前序遍历的顺序为：根左右 中序遍历的顺序为：左根右</p>
+<p>递归思想:</p>
+<ol>
+<li>我们先根据前序遍历序列的第一个确定根，然后在中序遍历的序列中找到根的位置，根左边的就是其左子树，右边就是其右子树</li>
+<li>构建根和左右子树</li>
+<li>递归的进行1和2</li>
+</ol>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><figure class="highlight go"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> TreeNode <span class="keyword">struct</span> {</span><br><span class="line">    Val <span class="keyword">int</span></span><br><span class="line">    Left *TreeNode</span><br><span class="line">    Right *TreeNode</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printPreOrder</span><span class="params">(root *TreeNode)</span></span> {</span><br><span class="line">    <span class="keyword">if</span> root != <span class="literal">nil</span> {</span><br><span class="line">        fmt.Printf(<span class="string">"%d "</span>, root.Val)</span><br><span class="line">        printInOrder(root.Left)</span><br><span class="line">        printInOrder(root.Right)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printInOrder</span><span class="params">(root *TreeNode)</span></span> {</span><br><span class="line">    <span class="keyword">if</span> root != <span class="literal">nil</span> {</span><br><span class="line">        printInOrder(root.Left)</span><br><span class="line">        fmt.Printf(<span class="string">"%d "</span>, root.Val)</span><br><span class="line">        printInOrder(root.Right)</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reConstructBinaryTree</span><span class="params">(pre []<span class="keyword">int</span>,in []<span class="keyword">int</span>)</span> *<span class="title">TreeNode</span></span> {</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(pre) != <span class="built_in">len</span>(in) || <span class="built_in">len</span>(pre) == <span class="number">0</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// find root in preOrder and rootIndex in InOrder</span></span><br><span class="line">    rootVal := pre[<span class="number">0</span>]</span><br><span class="line">    rootIndex := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i < <span class="built_in">len</span>(in) ; i++ {</span><br><span class="line">        <span class="keyword">if</span> in[i] == rootVal {</span><br><span class="line">            rootIndex = i</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    inL,inR := in[:rootIndex],in[rootIndex+<span class="number">1</span>:]</span><br><span class="line">    preL, preR := pre[<span class="number">1</span>:rootIndex+<span class="number">1</span>],pre[rootIndex+<span class="number">1</span>:]</span><br><span class="line">    Left := reConstructBinaryTree(preL,inL)</span><br><span class="line">    Right := reConstructBinaryTree(preR,inR)</span><br><span class="line">    <span class="keyword">return</span> &TreeNode{Val: rootVal, Left: Left, Right: Right}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> {</span><br><span class="line">    pre := []<span class="keyword">int</span>{<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>}</span><br><span class="line">    in := []<span class="keyword">int</span>{<span class="number">4</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">8</span>}</span><br><span class="line">    fmt.Println(<span class="string">"preOder: "</span>, pre)</span><br><span class="line">    fmt.Println(<span class="string">"inOrder: "</span>, in)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Reconstruct</span></span><br><span class="line">    fmt.Println(<span class="string">"\nReconstruct Binary Tree... \n "</span>,)</span><br><span class="line">    root := reConstructBinaryTree(pre, in)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// test </span></span><br><span class="line">    fmt.Printf(<span class="string">"preOder from Tree reconstructed:  "</span>)</span><br><span class="line">    printPreOrder(root)</span><br><span class="line">    fmt.Printf(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    fmt.Printf(<span class="string">"inOder from Tree reconstructed:  "</span>)</span><br><span class="line">    printInOrder(root)</span><br><span class="line">    fmt.Printf(<span class="string">"\n"</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 </body></html>
       
     </div>
@@ -650,7 +596,7 @@
           
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/hashmap/" rel="tag"><i class="fa fa-tag"></i> hashmap</a>
+            <a href="/tags/剑指offer/" rel="tag"><i class="fa fa-tag"></i> 剑指offer</a>
           
         </div>
       
@@ -663,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/22/leetcode136-只出现一次的数字/" rel="next" title="【leetcode】136.只出现一次的数字">
-                <i class="fa fa-chevron-left"></i> 【leetcode】136.只出现一次的数字
+              <a href="/2019/06/14/剑指offer-从尾到头打印链表/" rel="next" title="剑指offer-从尾到头打印链表">
+                <i class="fa fa-chevron-left"></i> 剑指offer-从尾到头打印链表
               </a>
             
           </div>
@@ -673,8 +619,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/29/剑指offer-二维数组中的查找/" rel="prev" title="剑指offer-二维数组中的查找">
-                剑指offer-二维数组中的查找 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/01/TCP与UDP的区别/" rel="prev" title="TCP与UDP的区别">
+                TCP与UDP的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -918,7 +864,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希函数"><span class="nav-number">1.</span> <span class="nav-text">哈希函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突解决"><span class="nav-number">2.</span> <span class="nav-text">冲突解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过代码理解哈希表"><span class="nav-number">3.</span> <span class="nav-text">通过代码理解哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设计哈希集合"><span class="nav-number">3.0.1.</span> <span class="nav-text">设计哈希集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计哈希映射"><span class="nav-number">3.0.2.</span> <span class="nav-text">设计哈希映射</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂度分析"><span class="nav-number">4.</span> <span class="nav-text">复杂度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#空间复杂度"><span class="nav-number">4.0.1.</span> <span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间复杂度"><span class="nav-number">4.0.2.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a></li></ol></div>
             
 
           </div>
